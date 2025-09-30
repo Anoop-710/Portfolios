@@ -82,7 +82,7 @@ export function ContactSection() {
                             className="text-lg text-muted-foreground leading-relaxed"
                         >
                             Have a project in mind or want to discuss opportunities?
-                            I'd love to hear from you. Let's create something amazing together.
+                            I&apos;d love to hear from you. Let&apos;s create something amazing together.
                         </motion.p>
 
                         {/* Contact Details */}

@@ -61,9 +61,9 @@ export function AboutSection() {
                             </p>
 
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                When I'm not coding, you'll find me exploring nature trails, capturing moments with my camera,
+                                When I&apos;m not coding, you&apos;ll find me exploring nature trails, capturing moments with my camera,
                                 or experimenting with new recipes in the kitchen. I believe that the best code is written by
-                                developers who understand both the technical challenges and the human experiences they're solving for.
+                                developers who understand both the technical challenges and the human experiences they&apos;re solving for.
                             </p>
                         </motion.div>
 
