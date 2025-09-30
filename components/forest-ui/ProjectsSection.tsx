@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { projects } from "@/lib/constants";
-import { ExternalLink, Github, Eye } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 
 const containerVariants = {
     hidden: { opacity: 0 },
