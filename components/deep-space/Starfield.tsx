@@ -14,13 +14,13 @@ interface Star {
 export function Starfield() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const starsRef = useRef<Star[]>([]);
-    const animationRef = useRef<number>();
+    const animationRef = useRef<number>(0); // Initialize with 0 to ensure it's always a number
 
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
-        const ctx = canvas.getContext("2d");
+        const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
         if (!ctx) return;
 
         const resizeCanvas = () => {

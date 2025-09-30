@@ -1,14 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Starfield } from "@/components/deep-space/Starfield";
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import { HeroSection } from "@/components/deep-space/HeroSection";
 import { AboutSection } from "@/components/deep-space/AboutSection";
 import { ProjectsSection } from "@/components/deep-space/ProjectsSection";
 import { ContactSection } from "@/components/deep-space/ContactSection";
 import { Navigation } from "@/components/deep-space/Navigation";
 import { ThemeProvider } from "@/components/deep-space/ThemeProvider";
+import { Starfield } from "@/components/deep-space/Starfield";
 
 export default function DeepSpacePortfolio() {
     const [activeSection, setActiveSection] = useState("hero");

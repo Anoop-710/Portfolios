@@ -173,7 +173,7 @@ export function ContactSection({ setActiveSection }: ContactSectionProps) {
                         <div>
                             <h3 className="text-2xl font-bold text-white mb-6">Let&apos;s Connect</h3>
                             <p className="text-gray-300 dark:text-gray-400 leading-relaxed">
-                                I'm always interested in new opportunities and exciting projects.
+                                I&apos;m always interested in new opportunities and exciting projects.
                                 Whether you have a question or just want to say hi, feel free to reach out!
                             </p>
                         </div>
