@@ -66,15 +66,16 @@ export default function Home() {
               className="relative"
             >
               <Link href={
-                index === 0 ? "/autumn" :
-                  index === 1 ? "/forest" :
-                    index === 2 ? "/cyberpunk" :
-                      index === 3 ? "/ocean" :
-                        index === 4 ? "/mountain" :
-                          index === 5 ? "/steampunk" :
-                            index === 6 ? "/cyberpunk" :
-                              index === 7 ? "/deep-space" :
-                                "/"
+                index === 0 ? "/arctic" :
+                  index === 1 ? "/autumn" :
+                    index === 2 ? "/forest" :
+                      index === 3 ? "/cyberpunk" :
+                        index === 4 ? "/ocean" :
+                          index === 5 ? "/mountain" :
+                            index === 6 ? "/steampunk" :
+                              index === 7 ? "/galaxy" :
+                                index === 8 ? "/deep-space" :
+                                  "/"
               } className="block">
                 <div className={`relative backdrop-blur-md rounded-2xl p-8 text-center hover:bg-white/20 transition-all duration-300 shadow-xl hover:shadow-2xl h-64 flex items-center justify-center border border-white/20 ${index === 1 || index === 4 || index === 5 ?
                   'bg-gradient-to-br from-cyan-900/30 via-purple-900/30 to-pink-900/30' :
@@ -86,34 +87,37 @@ export default function Home() {
                     }`} />
                   <div>
                     <h3 className="text-2xl font-bold mb-3">
-                      {index === 0 ? "Autumn Harvest Portfolio" :
-                        index === 1 ? "Forest Portfolio" :
-                          index === 2 ? "Cyberpunk Portfolio" :
-                            index === 3 ? "Ocean Portfolio" :
-                              index === 4 ? "Mountain Portfolio" :
-                                index === 5 ? "Steampunk Portfolio" :
-                                  index === 6 ? "Cyberpunk City" :
-                                    index === 7 ? "Deep Space Portfolio" :
-                                      `Portfolio ${index + 1}`}
+                      {index === 0 ? "Arctic Ice Portfolio" :
+                        index === 1 ? "Autumn Harvest Portfolio" :
+                          index === 2 ? "Forest Portfolio" :
+                            index === 3 ? "Cyberpunk Portfolio" :
+                              index === 4 ? "Ocean Portfolio" :
+                                index === 5 ? "Mountain Portfolio" :
+                                  index === 6 ? "Steampunk Portfolio" :
+                                    index === 7 ? "Mystical Galaxy Portfolio" :
+                                      index === 8 ? "Deep Space Portfolio" :
+                                        `Portfolio ${index + 1}`}
                     </h3>
                     <p className="text-sm opacity-90">
                       {index === 0
-                        ? "Autumn harvest-themed portfolio with falling leaves, golden fields, and lantern glow effects"
+                        ? "Arctic ice and aurora-themed portfolio with animated northern lights, snow particles, and frosted glass effects"
                         : index === 1
-                          ? "Forest-inspired developer portfolio with immersive animations"
+                          ? "Autumn harvest-themed portfolio with falling leaves, golden fields, and lantern glow effects"
                           : index === 2
-                            ? "Cyberpunk city-themed portfolio with neon aesthetics and futuristic design"
+                            ? "Forest-inspired developer portfolio with immersive animations"
                             : index === 3
-                              ? "Underwater ocean-themed portfolio with aquatic animations and deep-sea atmosphere"
+                              ? "Cyberpunk city-themed portfolio with neon aesthetics and futuristic design"
                               : index === 4
-                                ? "Mountain dawn-themed portfolio with sunrise animations and serene landscapes"
+                                ? "Underwater ocean-themed portfolio with aquatic animations and deep-sea atmosphere"
                                 : index === 5
-                                  ? "Ancient scroll meets steampunk machinery with animated gears and vintage aesthetics"
+                                  ? "Mountain dawn-themed portfolio with sunrise animations and serene landscapes"
                                   : index === 6
-                                    ? "Neon-lit cyberpunk portfolio with holographic effects and city vibes"
+                                    ? "Ancient scroll meets steampunk machinery with animated gears and vintage aesthetics"
                                     : index === 7
-                                      ? "Deep space themed portfolio with stars, nebulae, and cosmic animations"
-                                      : `Modern ${index + 1} portfolio template`
+                                      ? "Mystical galaxy portfolio with starry skies, glowing runes, enchanted nebulae, and floating magical orbs"
+                                      : index === 8
+                                        ? "Deep space themed portfolio with stars, nebulae, and cosmic animations"
+                                        : `Modern ${index + 1} portfolio template`
                       }
                     </p>
                   </div>
