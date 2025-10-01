@@ -2,8 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { useDesertTheme } from './ThemeProvider';
+import { memo } from 'react';
 
-const AboutSection = () => {
+const AboutSection = memo(() => {
     const theme = useDesertTheme();
 
     const skills = [
@@ -215,6 +216,8 @@ const AboutSection = () => {
             ))}
         </section>
     );
-};
+});
+
+AboutSection.displayName = 'AboutSection';
 
 export default AboutSection;

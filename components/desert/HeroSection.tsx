@@ -2,8 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { useDesertTheme } from './ThemeProvider';
+import { memo } from 'react';
 
-const HeroSection = () => {
+const HeroSection = memo(() => {
     const theme = useDesertTheme();
 
     return (
@@ -219,6 +220,8 @@ const HeroSection = () => {
             </motion.div>
         </section>
     );
-};
+});
+
+HeroSection.displayName = 'HeroSection';
 
 export default HeroSection;

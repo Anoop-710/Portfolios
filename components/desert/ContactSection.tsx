@@ -2,9 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { useDesertTheme } from './ThemeProvider';
-import { useState } from 'react';
+import { useState, memo } from 'react';
 
-const ContactSection = () => {
+const ContactSection = memo(() => {
     const theme = useDesertTheme();
     const [formData, setFormData] = useState({
         name: '',
@@ -325,6 +325,8 @@ const ContactSection = () => {
             />
         </section>
     );
-};
+});
+
+ContactSection.displayName = 'ContactSection';
 
 export default ContactSection;

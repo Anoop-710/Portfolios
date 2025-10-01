@@ -1,22 +1,29 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback, memo } from 'react';
 
-const DuneBackground = () => {
+const DuneBackground = memo(() => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        const handleMouseMove = (e: MouseEvent) => {
-            setMousePosition({
-                x: (e.clientX / window.innerWidth) * 2 - 1,
-                y: (e.clientY / window.innerHeight) * 2 - 1
-            });
-        };
-
-        window.addEventListener('mousemove', handleMouseMove);
-        return () => window.removeEventListener('mousemove', handleMouseMove);
+        setMounted(true);
     }, []);
+
+    const handleMouseMove = useCallback((e: MouseEvent) => {
+        setMousePosition({
+            x: (e.clientX / window.innerWidth) * 2 - 1,
+            y: (e.clientY / window.innerHeight) * 2 - 1
+        });
+    }, []);
+
+    useEffect(() => {
+        if (!mounted) return;
+
+        window.addEventListener('mousemove', handleMouseMove, { passive: true });
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, [handleMouseMove, mounted]);
 
     return (
         <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
@@ -166,6 +173,8 @@ const DuneBackground = () => {
             ))}
         </div>
     );
-};
+});
+
+DuneBackground.displayName = 'DuneBackground';
 
 export default DuneBackground;

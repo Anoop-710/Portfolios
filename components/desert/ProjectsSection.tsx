@@ -2,9 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { useDesertTheme } from './ThemeProvider';
-import { useState } from 'react';
+import { useState, memo } from 'react';
 
-const ProjectsSection = () => {
+const ProjectsSection = memo(() => {
     const theme = useDesertTheme();
     const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
@@ -345,6 +345,8 @@ const ProjectsSection = () => {
             ))}
         </section>
     );
-};
+});
+
+ProjectsSection.displayName = 'ProjectsSection';
 
 export default ProjectsSection;
