@@ -30,7 +30,7 @@ export function Navigation() {
                 {/* Navigation Links */}
                 <div className="hidden md:flex items-center space-x-8">
                     {[
-                        { name: "Home", href: "#home" },
+                        { name: "Home", href: "/" },
                         { name: "About", href: "#about" },
                         { name: "Projects", href: "#projects" },
                         { name: "Contact", href: "#contact" },

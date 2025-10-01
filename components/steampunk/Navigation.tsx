@@ -10,7 +10,7 @@ export function Navigation() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const navItems = [
-        { name: "Home", href: "#hero" },
+        { name: "Home", href: "/" },
         { name: "About", href: "#about" },
         { name: "Projects", href: "#projects" },
         { name: "Contact", href: "#contact" },

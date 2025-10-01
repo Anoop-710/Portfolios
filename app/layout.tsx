@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Chen - Full Stack Developer",
-  description: "Portfolio of Alex Chen, a passionate full-stack developer creating beautiful digital experiences with modern web technologies.",
+  title: "Portfolio Templates",
+  description: "Collection of portfolio templates ready to use with Next.js",
   viewport: "width=device-width, initial-scale=1, maximum-scale=5",
   themeColor: [
     { media: "(prefers-color-scheme: dark)", color: "#064e3b" },

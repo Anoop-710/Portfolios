@@ -66,7 +66,7 @@ export default function Home() {
               className="relative"
             >
               <Link href={
-                index === 0 ? "/arctic" :
+                index === 0 ? "/desert" :
                   index === 1 ? "/autumn" :
                     index === 2 ? "/forest" :
                       index === 3 ? "/cyberpunk" :
@@ -87,7 +87,7 @@ export default function Home() {
                     }`} />
                   <div>
                     <h3 className="text-2xl font-bold mb-3">
-                      {index === 0 ? "Arctic Ice Portfolio" :
+                      {index === 0 ? "Scortching Desert Portfolio" :
                         index === 1 ? "Autumn Harvest Portfolio" :
                           index === 2 ? "Forest Portfolio" :
                             index === 3 ? "Cyberpunk Portfolio" :
@@ -100,7 +100,7 @@ export default function Home() {
                     </h3>
                     <p className="text-sm opacity-90">
                       {index === 0
-                        ? "Arctic ice and aurora-themed portfolio with animated northern lights, snow particles, and frosted glass effects"
+                        ? "Desert-themed portfolio with sand dunes, sunsets, and sandstorm animations"
                         : index === 1
                           ? "Autumn harvest-themed portfolio with falling leaves, golden fields, and lantern glow effects"
                           : index === 2

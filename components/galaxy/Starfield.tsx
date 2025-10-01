@@ -1,18 +1,19 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import Particles from "@tsparticles/react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import type { Engine } from "@tsparticles/engine";
 
 export function Starfield() {
     const [init, setInit] = useState(false);
 
     useEffect(() => {
-        // Initialize tsparticles
+        // Initialize tsparticles engine
         const initParticles = async () => {
             try {
-                await loadSlim(window as never);
+                await initParticlesEngine(async (engine) => {
+                    await loadSlim(engine);
+                });
                 setInit(true);
             } catch (error) {
                 console.error("Failed to initialize particles:", error);
