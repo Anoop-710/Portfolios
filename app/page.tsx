@@ -65,12 +65,12 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative"
             >
-              <Link href={index === 0 ? "/forest" : index === 1 ? "/deep-space" : index === 2 ? "/ocean" : "/"} className="block">
+              <Link href={index === 0 ? "/forest" : index === 1 ? "/deep-space" : index === 2 ? "/ocean" : index === 3 ? "/mountain" : "/"} className="block">
                 <div className={`relative backdrop-blur-md rounded-2xl p-8 text-center hover:bg-white/20 transition-all duration-300 shadow-xl hover:shadow-2xl h-64 flex items-center justify-center border border-white/20 ${index === 1 ? 'bg-gradient-to-br from-indigo-900/30 via-purple-900/30 to-blue-900/30' : 'bg-white/10'}`}>
                   <div className={`absolute inset-0 rounded-2xl ${index === 1 ? 'bg-gradient-to-r from-blue-600/20 to-purple-600/20' : 'bg-gradient-to-r from-blue-600/20 to-purple-600/20'}`} />
                   <div>
                     <h3 className="text-2xl font-bold mb-3">
-                      {index === 0 ? "Forest Portfolio" : index === 1 ? "Deep Space Portfolio" : index === 2 ? "Ocean Portfolio" : `Portfolio ${index + 1}`}
+                      {index === 0 ? "Forest Portfolio" : index === 1 ? "Deep Space Portfolio" : index === 2 ? "Ocean Portfolio" : index === 3 ? "Mountain Portfolio" : `Portfolio ${index + 1}`}
                     </h3>
                     <p className="text-sm opacity-90">
                       {index === 0
@@ -79,7 +79,9 @@ export default function Home() {
                           ? "Deep space themed portfolio with cosmic animations and stellar design"
                           : index === 2
                             ? "Underwater ocean-themed portfolio with aquatic animations and deep-sea atmosphere"
-                            : `Modern ${index + 1} portfolio template`
+                            : index === 3
+                              ? "Mountain dawn-themed portfolio with sunrise animations and serene landscapes"
+                              : `Modern ${index + 1} portfolio template`
                       }
                     </p>
                   </div>
