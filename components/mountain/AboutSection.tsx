@@ -83,12 +83,12 @@ export function AboutSection() {
                                         What started as a hobby quickly evolved into a passion for creating meaningful digital experiences.
                                     </p>
                                     <p>
-                                        Over the years, I've had the privilege of working with startups and established companies,
+                                        Over the years, I&apos;ve had the privilege of working with startups and established companies,
                                         helping them build products that users love. I believe in writing clean, maintainable code
                                         and creating intuitive user interfaces.
                                     </p>
                                     <p>
-                                        When I'm not coding, you'll find me exploring new technologies, contributing to open source projects,
+                                        When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to open source projects,
                                         or enjoying the outdoors. I believe that the best code is written by developers who are constantly learning
                                         and growing.
                                     </p>

@@ -42,8 +42,8 @@ export function ContactSection() {
                         Get In Touch
                     </h2>
                     <p className="text-lg md:text-xl text-white dark:text-slate-400 max-w-3xl mx-auto drop-shadow-md">
-                        Have a project in mind or want to collaborate? I'd love to hear from you.
-                        Let's create something amazing together.
+                        Have a project in mind or want to collaborate? I&apos;d love to hear from you.
+                        Let&apos;s create something amazing together.
                     </p>
                 </motion.div>
 
@@ -136,7 +136,7 @@ export function ContactSection() {
                             <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-20" />
                             <div className="relative bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border border-white/20 dark:border-slate-700/20">
                                 <h3 className="text-2xl font-bold mb-6 text-slate-800 dark:text-slate-200">
-                                    Let's Connect
+                                    Let&apos;s Connect
                                 </h3>
                                 <div className="space-y-4">
                                     <div className="flex items-center space-x-4">

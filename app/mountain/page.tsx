@@ -5,10 +5,10 @@ import { AboutSection } from "@/components/mountain/AboutSection";
 import { ProjectsSection } from "@/components/mountain/ProjectsSection";
 import { ContactSection } from "@/components/mountain/ContactSection";
 import { Navigation } from "@/components/mountain/Navigation";
-import { MountainLayers } from "@/components/mountain/MountainLayers";
 import { CloudAnimation } from "@/components/mountain/CloudAnimation";
 import { BirdAnimation } from "@/components/mountain/BirdAnimation";
 import { SunMoonAnimation } from "@/components/mountain/SunMoonAnimation";
+import { MountainLayers } from "@/components/mountain/MountainLayers";
 
 export default function MountainPortfolio() {
     return (

@@ -127,7 +127,7 @@ export function SunMoonAnimation() {
                         }}
                     >
                         {/* Moon surface */}
-                        <div className="absolute inset-2 rounded-full bg-gradient-to-br from-slate-100 to-slate-300 relative overflow-hidden">
+                        <div className="absolute inset-2 rounded-full bg-gradient-to-br from-slate-100 to-slate-300 overflow-hidden">
                             {/* Moon craters */}
                             <motion.div
                                 className="absolute top-2 left-3 w-3 h-3 bg-slate-400 rounded-full opacity-40"
