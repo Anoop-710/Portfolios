@@ -65,12 +65,32 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative"
             >
-              <Link href={index === 0 ? "/forest" : index === 1 ? "/cyberpunk" : index === 2 ? "/ocean" : index === 3 ? "/mountain" : index === 4 ? "/cyberpunk" : "/"} className="block">
-                <div className={`relative backdrop-blur-md rounded-2xl p-8 text-center hover:bg-white/20 transition-all duration-300 shadow-xl hover:shadow-2xl h-64 flex items-center justify-center border border-white/20 ${index === 1 || index === 4 ? 'bg-gradient-to-br from-cyan-900/30 via-purple-900/30 to-pink-900/30' : 'bg-white/10'}`}>
-                  <div className={`absolute inset-0 rounded-2xl ${index === 1 || index === 4 ? 'bg-gradient-to-r from-cyan-600/20 to-purple-600/20' : 'bg-gradient-to-r from-blue-600/20 to-purple-600/20'}`} />
+              <Link href={
+                index === 0 ? "/forest" :
+                  index === 1 ? "/cyberpunk" :
+                    index === 2 ? "/ocean" :
+                      index === 3 ? "/mountain" :
+                        index === 4 ? "/steampunk" :
+                          index === 5 ? "/cyberpunk" :
+                            "/"
+              } className="block">
+                <div className={`relative backdrop-blur-md rounded-2xl p-8 text-center hover:bg-white/20 transition-all duration-300 shadow-xl hover:shadow-2xl h-64 flex items-center justify-center border border-white/20 ${index === 1 || index === 4 || index === 5 ?
+                    'bg-gradient-to-br from-cyan-900/30 via-purple-900/30 to-pink-900/30' :
+                    'bg-white/10'
+                  }`}>
+                  <div className={`absolute inset-0 rounded-2xl ${index === 1 || index === 4 || index === 5 ?
+                      'bg-gradient-to-r from-cyan-600/20 to-purple-600/20' :
+                      'bg-gradient-to-r from-blue-600/20 to-purple-600/20'
+                    }`} />
                   <div>
                     <h3 className="text-2xl font-bold mb-3">
-                      {index === 0 ? "Forest Portfolio" : index === 1 ? "Cyberpunk Portfolio" : index === 2 ? "Ocean Portfolio" : index === 3 ? "Mountain Portfolio" : index === 4 ? "Cyberpunk City" : `Portfolio ${index + 1}`}
+                      {index === 0 ? "Forest Portfolio" :
+                        index === 1 ? "Cyberpunk Portfolio" :
+                          index === 2 ? "Ocean Portfolio" :
+                            index === 3 ? "Mountain Portfolio" :
+                              index === 4 ? "Steampunk Portfolio" :
+                                index === 5 ? "Cyberpunk City" :
+                                  `Portfolio ${index + 1}`}
                     </h3>
                     <p className="text-sm opacity-90">
                       {index === 0
@@ -82,8 +102,10 @@ export default function Home() {
                             : index === 3
                               ? "Mountain dawn-themed portfolio with sunrise animations and serene landscapes"
                               : index === 4
-                                ? "Neon-lit cyberpunk portfolio with holographic effects and city vibes"
-                                : `Modern ${index + 1} portfolio template`
+                                ? "Ancient scroll meets steampunk machinery with animated gears and vintage aesthetics"
+                                : index === 5
+                                  ? "Neon-lit cyberpunk portfolio with holographic effects and city vibes"
+                                  : `Modern ${index + 1} portfolio template`
                       }
                     </p>
                   </div>
