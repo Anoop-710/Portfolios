@@ -20,6 +20,18 @@ export function SunMoonAnimation() {
         setStars(starPositions);
     }, []);
 
+    // Prevent hydration mismatch by not rendering until mounted
+    if (!mounted) {
+        return (
+            <div className="absolute inset-0 pointer-events-none z-5">
+                {/* Basic sun/moon structure for SSR */}
+                <div className="absolute top-16 right-16">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-300 to-orange-400" />
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="absolute inset-0 pointer-events-none z-5">
             {/* Sun (Light mode) */}

@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { useTheme } from "./ThemeProvider";
 import { Sun, Moon, Menu, X } from "lucide-react";
 
 export function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
     const { theme, setTheme } = useTheme();
+    const router = useRouter();
 
     const navItems = [
         { name: "Home", href: "/" },
@@ -17,9 +19,15 @@ export function Navigation() {
     ];
 
     const scrollToSection = (href: string) => {
-        const element = document.querySelector(href);
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
+        // Handle home route by navigating to the main portfolio page
+        if (href === "/") {
+            router.push("/");
+        } else {
+            // For anchor links like #about, #projects, etc.
+            const element = document.querySelector(href);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
         }
         setIsOpen(false);
     };

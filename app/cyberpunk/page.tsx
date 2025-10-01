@@ -20,7 +20,7 @@ export default function CyberpunkPortfolio() {
 
     return (
         <ThemeProvider>
-            <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-cyan-900 dark:from-black dark:via-purple-950 dark:to-cyan-950 text-white relative overflow-hidden">
+            <div className="min-h-screen bg-gradient-to-br from-black via-purple-950 to-cyan-950 text-white relative overflow-hidden">
                 {/* Animated Background */}
                 <div className="fixed inset-0 z-0">
                     <ParticlesBackground />

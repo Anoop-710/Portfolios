@@ -4,11 +4,13 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useRouter } from "next/navigation";
 
 export function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
     const [mounted, setMounted] = useState(false);
     const { theme, setTheme } = useTheme();
+    const router = useRouter();
 
     useEffect(() => {
         setMounted(true);
@@ -22,9 +24,16 @@ export function Navigation() {
     ];
 
     const scrollToSection = (href: string) => {
-        const element = document.querySelector(href);
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
+        // Handle home route - navigate to main portfolio page
+        if (href === "/") {
+            router.push("/");
+        }
+        // Handle anchor links - find element by ID
+        else if (href.startsWith("#")) {
+            const element = document.querySelector(href);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
         }
         setIsOpen(false);
     };

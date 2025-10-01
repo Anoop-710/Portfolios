@@ -2,15 +2,26 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import Particles from "@tsparticles/react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import type { Engine } from "@tsparticles/engine";
 
 export function ParticlesBackground() {
     const [init, setInit] = useState(false);
 
     useEffect(() => {
-        loadSlim(window as never).then(() => setInit(true));
+        // Initialize tsparticles engine properly
+        const initParticles = async () => {
+            try {
+                await initParticlesEngine(async (engine) => {
+                    await loadSlim(engine);
+                });
+                setInit(true);
+            } catch (error) {
+                console.error("Failed to initialize particles:", error);
+            }
+        };
+
+        initParticles();
     }, []);
 
     const particlesOptions = useMemo(() => ({

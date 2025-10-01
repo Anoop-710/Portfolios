@@ -1,12 +1,43 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
+import { useRouter } from "next/navigation";
 
 export function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
     const { theme, setTheme } = useTheme();
+    const router = useRouter();
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const navItems = [
+        { name: "Home", href: "/" },
+        { name: "About", href: "#about" },
+        { name: "Projects", href: "#projects" },
+        { name: "Contact", href: "#contact" },
+    ];
+
+    const scrollToSection = (href: string) => {
+        // Handle home route - navigate to main portfolio page
+        if (href === "/") {
+            router.push("/");
+        }
+        // Handle anchor links - find element by ID
+        else if (href.startsWith("#")) {
+            const element = document.querySelector(href);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+        setIsOpen(false);
+    };
+
+    if (!mounted) return null;
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 bg-white/10 dark:bg-slate-900/10 backdrop-blur-md border-b border-white/20 dark:border-slate-700/20">
@@ -22,18 +53,17 @@ export function Navigation() {
 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center space-x-8">
-                    <a href="#hero" className="text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
-                        Home
-                    </a>
-                    <a href="#about" className="text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
-                        About
-                    </a>
-                    <a href="#projects" className="text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
-                        Projects
-                    </a>
-                    <a href="#contact" className="text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
-                        Contact
-                    </a>
+                    {navItems.map((item) => (
+                        <motion.button
+                            key={item.name}
+                            onClick={() => scrollToSection(item.href)}
+                            className="text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            {item.name}
+                        </motion.button>
+                    ))}
 
                     {/* Theme Toggle */}
                     <button
@@ -88,18 +118,21 @@ export function Navigation() {
                     className="md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-white/20 dark:border-slate-700/20"
                 >
                     <div className="px-6 py-4 space-y-4">
-                        <a href="#hero" className="block text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400" onClick={() => setIsOpen(false)}>
-                            Home
-                        </a>
-                        <a href="#about" className="block text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400" onClick={() => setIsOpen(false)}>
-                            About
-                        </a>
-                        <a href="#projects" className="block text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400" onClick={() => setIsOpen(false)}>
-                            Projects
-                        </a>
-                        <a href="#contact" className="block text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400" onClick={() => setIsOpen(false)}>
-                            Contact
-                        </a>
+                        {navItems.map((item, index) => (
+                            <motion.button
+                                key={item.name}
+                                onClick={() => scrollToSection(item.href)}
+                                className="block w-full text-left text-slate-700 dark:text-slate-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{
+                                    opacity: isOpen ? 1 : 0,
+                                    x: isOpen ? 0 : -20,
+                                }}
+                                transition={{ delay: index * 0.1 }}
+                            >
+                                {item.name}
+                            </motion.button>
+                        ))}
                     </div>
                 </motion.div>
             )}
