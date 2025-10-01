@@ -41,7 +41,7 @@ export function ContactSection() {
                     </h2>
                     <p className="text-xl text-slate-300 max-w-3xl mx-auto">
                         Open a gateway to the cosmos and send your message through the ethereal void.
-                        Let's connect across the digital universe.
+                        Let&apos;s connect across the digital universe.
                     </p>
                 </motion.div>
 

@@ -5,8 +5,8 @@ import { HeroSection } from "@/components/galaxy/HeroSection";
 import { AboutSection } from "@/components/galaxy/AboutSection";
 import { ProjectsSection } from "@/components/galaxy/ProjectsSection";
 import { ContactSection } from "@/components/galaxy/ContactSection";
-import { FloatingOrbs } from "@/components/galaxy/FloatingOrbs";
 import { Starfield } from "@/components/galaxy/Starfield";
+import { FloatingOrbs } from "@/components/galaxy/FloatingOrbs";
 import { ThemeProvider } from "@/components/galaxy/ThemeProvider";
 
 export default function GalaxyPortfolio() {
