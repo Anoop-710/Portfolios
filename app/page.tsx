@@ -169,6 +169,17 @@ const portfolioData = [
     gradient: "from-amber-600 to-blue-600",
     bgGradient: "from-amber-50 to-blue-50",
     icon: "⚓"
+  },
+  {
+    id: 20,
+    title: "🎭 Venetian Masquerade",
+    subtitle: "Elegant Mask Portfolio",
+    description: "Dramatic Venetian masquerade ball inspired portfolio featuring ornate masks, candlelit ambience, golden lace accents, and theatrical animations. Perfect for developers who want to showcase their work with dramatic elegance and sophisticated visual storytelling.",
+    features: ["Venetian mask animations", "Candlelight effects", "Golden lace borders", "Curtain reveals", "Damask patterns", "Ornate typography"],
+    route: "/masquerade",
+    gradient: "from-purple-600 to-gold-600",
+    bgGradient: "from-purple-50 to-gold-50",
+    icon: "🎭"
   }
 ];
 

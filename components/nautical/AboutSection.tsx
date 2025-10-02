@@ -55,7 +55,7 @@ export default function AboutSection() {
                         <span className="text-3xl">📜</span>
                     </motion.div>
                     <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-800 to-amber-600 dark:from-amber-300 dark:to-amber-100 bg-clip-text text-transparent">
-                        Captain's Log
+                        Captain&apos;s Log
                     </h2>
                     <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
                         Chronicles of a digital explorer navigating the vast oceans of code,
@@ -92,7 +92,7 @@ export default function AboutSection() {
                                 <p>
                                     With over 8 years of experience commanding development vessels through
                                     treacherous waters of legacy code and uncharted territories of emerging technologies,
-                                    I've learned that the best code is like a well-navigated ship: efficient, scalable, and seaworthy.
+                                    I&apos;ve learned that the best code is like a well-navigated ship: efficient, scalable, and seaworthy.
                                 </p>
                                 <p>
                                     My expertise spans from the depths of backend architectures to the heights of
@@ -100,7 +100,7 @@ export default function AboutSection() {
                                     maintainable solutions that stand the test of time and tide.
                                 </p>
                                 <p>
-                                    When I'm not at the helm of development projects, you can find me exploring
+                                    When I&apos;m not at the helm of development projects, you can find me exploring
                                     new technologies, mentoring fellow developers, or contributing to open-source
                                     projects that help the entire developer community navigate smoother waters.
                                 </p>

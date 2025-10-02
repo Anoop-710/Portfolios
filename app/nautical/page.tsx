@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+
 import HeroSection from "@/components/nautical/HeroSection";
 import AboutSection from "@/components/nautical/AboutSection";
 import ProjectsSection from "@/components/nautical/ProjectsSection";
 import ContactSection from "@/components/nautical/ContactSection";
+import MapOverlay from "@/components/nautical/MapOverlay";
 import Navigation from "@/components/nautical/Navigation";
 import ThemeProvider from "@/components/nautical/ThemeProvider";
-import MapOverlay from "@/components/nautical/MapOverlay";
 
 export default function NauticalPortfolio() {
     const [currentSection, setCurrentSection] = useState("hero");

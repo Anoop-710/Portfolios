@@ -174,7 +174,7 @@ export default function HeroSection({ setCurrentSection }: HeroSectionProps) {
                         whileTap={{ scale: 0.95 }}
                     >
                         <span className="relative z-10 flex items-center space-x-2">
-                            <span>View Captain's Log</span>
+                            <span>View Captain&apos;s Log</span>
                             <motion.span
                                 animate={{ x: [0, 5, 0] }}
                                 transition={{ duration: 1.5, repeat: Infinity }}

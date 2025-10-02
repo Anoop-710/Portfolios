@@ -72,8 +72,8 @@ export default function ContactSection() {
                         Message in a Bottle
                     </h2>
                     <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                        Send a message across the digital seas. Whether you're looking to collaborate on a project,
-                        discuss opportunities, or just want to connect, drop your message in the bottle and I'll get back to you.
+                        Send a message across the digital seas. Whether you&apos;re looking to collaborate on a project,
+                        discuss opportunities, or just want to connect, drop your message in the bottle and I&apos;ll get back to you.
                     </p>
                 </motion.div>
 
