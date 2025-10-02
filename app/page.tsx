@@ -147,6 +147,17 @@ const portfolioData = [
     gradient: "from-pink-500 to-cyan-500",
     bgGradient: "from-pink-50 to-cyan-50",
     icon: "⚡"
+  },
+  {
+    id: 18,
+    title: "🧬 Biotech Flow",
+    subtitle: "DNA Helix Portfolio",
+    description: "Futuristic biotechnology-themed portfolio featuring rotating DNA helix animations, neuron connection lines, and liquid morphing backgrounds. Perfect for developers specializing in bioinformatics and life sciences technology.",
+    features: ["DNA helix animation", "Neuron connections", "Liquid morphing", "Bioinformatics theme"],
+    route: "/biotech",
+    gradient: "from-cyan-500 to-green-500",
+    bgGradient: "from-cyan-50 to-green-50",
+    icon: "🧬"
   }
 ];
 
