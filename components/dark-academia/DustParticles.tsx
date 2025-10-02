@@ -18,10 +18,21 @@ interface Particle {
     delay: number;
 }
 
+interface EmberParticle {
+    id: number;
+    x: number;
+    y: number;
+    size: number;
+    duration: number;
+    delay: number;
+}
+
 export function DustParticles({ count = 20, className = "" }: DustParticlesProps) {
     const [particles, setParticles] = useState<Particle[]>([]);
+    const [embers, setEmbers] = useState<EmberParticle[]>([]);
 
     useEffect(() => {
+        // Main dust particles
         const newParticles: Particle[] = Array.from({ length: count }, (_, i) => ({
             id: i,
             x: Math.random() * 100,
@@ -32,10 +43,22 @@ export function DustParticles({ count = 20, className = "" }: DustParticlesProps
             delay: Math.random() * 5,
         }));
         setParticles(newParticles);
+
+        // Ember-like particles
+        const newEmbers: EmberParticle[] = Array.from({ length: 8 }, (_, i) => ({
+            id: i,
+            x: 20 + i * 10,
+            y: 80 + Math.sin(i) * 10,
+            size: Math.random() * 2 + 1,
+            duration: Math.random() * 8 + 12,
+            delay: Math.random() * 3,
+        }));
+        setEmbers(newEmbers);
     }, [count]);
 
     return (
         <div className={`absolute inset-0 pointer-events-none ${className}`}>
+            {/* Dust particles */}
             {particles.map((particle) => (
                 <motion.div
                     key={particle.id}
@@ -62,16 +85,16 @@ export function DustParticles({ count = 20, className = "" }: DustParticlesProps
                 />
             ))}
 
-            {/* Additional ember-like particles */}
-            {Array.from({ length: 8 }, (_, i) => (
+            {/* Ember-like particles */}
+            {embers.map((ember) => (
                 <motion.div
-                    key={`ember-${i}`}
+                    key={`ember-${ember.id}`}
                     className="absolute rounded-full bg-orange-300/40"
                     style={{
-                        left: `${20 + (i * 10)}%`,
-                        top: `${80 + Math.sin(i) * 10}%`,
-                        width: `${Math.random() * 2 + 1}px`,
-                        height: `${Math.random() * 2 + 1}px`,
+                        left: `${ember.x}%`,
+                        top: `${ember.y}%`,
+                        width: `${ember.size}px`,
+                        height: `${ember.size}px`,
                     }}
                     animate={{
                         y: [0, -300],
@@ -79,8 +102,8 @@ export function DustParticles({ count = 20, className = "" }: DustParticlesProps
                         scale: [0.5, 1.5, 1, 0.5],
                     }}
                     transition={{
-                        duration: Math.random() * 8 + 12,
-                        delay: Math.random() * 3,
+                        duration: ember.duration,
+                        delay: ember.delay,
                         repeat: Infinity,
                         ease: "easeOut",
                     }}

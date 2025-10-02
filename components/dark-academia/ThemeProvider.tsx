@@ -31,40 +31,38 @@ export function ThemeProvider({
     const [theme, setTheme] = useState<Theme>(defaultTheme);
     const [mounted, setMounted] = useState(false);
 
+    // Load saved theme after mount
     useEffect(() => {
         setMounted(true);
-        // Only access localStorage after component mounts (client-side)
-        if (typeof window !== "undefined") {
-            const stored = window.localStorage.getItem(storageKey) as Theme;
+
+        try {
+            const stored = window.localStorage.getItem(storageKey) as Theme | null;
             if (stored) {
                 setTheme(stored);
             }
+        } catch {
+            // ignore (SSR safe)
         }
     }, [storageKey]);
 
+    // Apply theme classes
     useEffect(() => {
         if (!mounted) return;
 
-        if (typeof window !== "undefined") {
-            const root = window.document.documentElement;
-
-            root.classList.remove("light", "dark", "sepia");
-
-            if (theme === "sepia") {
-                root.classList.add("sepia");
-            } else if (theme === "dark") {
-                root.classList.add("dark");
-            }
-        }
+        const root = window.document.documentElement;
+        root.classList.remove("light", "dark", "sepia");
+        root.classList.add(theme);
     }, [theme, mounted]);
 
     const value = {
         theme,
-        setTheme: (theme: Theme) => {
-            if (typeof window !== "undefined") {
-                window.localStorage.setItem(storageKey, theme);
+        setTheme: (newTheme: Theme) => {
+            try {
+                window.localStorage.setItem(storageKey, newTheme);
+            } catch {
+                // ignore (SSR safe)
             }
-            setTheme(theme);
+            setTheme(newTheme);
         },
     };
 
@@ -77,9 +75,7 @@ export function ThemeProvider({
 
 export const useTheme = () => {
     const context = useContext(ThemeProviderContext);
-
     if (context === undefined)
         throw new Error("useTheme must be used within a ThemeProvider");
-
     return context;
 };

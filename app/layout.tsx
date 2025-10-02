@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/forest-ui/ThemeProvider";
 import "./globals.css";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,14 +21,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Portfolio Templates",
   description: "Collection of portfolio templates ready to use with Next.js",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
+  other: {
+    "format-detection": "telephone=no",
+  },
+};
+
+// 👇 Move viewport + themeColor here
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
   themeColor: [
     { media: "(prefers-color-scheme: dark)", color: "#064e3b" },
     { media: "(prefers-color-scheme: light)", color: "#10b981" },
   ],
-  other: {
-    "format-detection": "telephone=no",
-  },
 };
 
 export default function RootLayout({
