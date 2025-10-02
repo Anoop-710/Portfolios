@@ -28,11 +28,21 @@ export function ThemeProvider({
     storageKey = "dark-academia-ui-theme",
     ...props
 }: ThemeProviderProps) {
-    const [theme, setTheme] = useState<Theme>(
-        () => (localStorage?.getItem(storageKey) as Theme) || defaultTheme
-    );
+    const [theme, setTheme] = useState<Theme>(defaultTheme);
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
+        setMounted(true);
+        // Only access localStorage after component mounts (client-side)
+        const stored = localStorage?.getItem(storageKey) as Theme;
+        if (stored) {
+            setTheme(stored);
+        }
+    }, [storageKey]);
+
+    useEffect(() => {
+        if (!mounted) return;
+
         const root = window.document.documentElement;
 
         root.classList.remove("light", "dark", "sepia");
@@ -42,7 +52,7 @@ export function ThemeProvider({
         } else if (theme === "dark") {
             root.classList.add("dark");
         }
-    }, [theme]);
+    }, [theme, mounted]);
 
     const value = {
         theme,
