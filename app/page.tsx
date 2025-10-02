@@ -158,6 +158,17 @@ const portfolioData = [
     gradient: "from-cyan-500 to-green-500",
     bgGradient: "from-cyan-50 to-green-50",
     icon: "🧬"
+  },
+  {
+    id: 19,
+    title: "⚓ Nautical Explorer",
+    subtitle: "Pirate Map Portfolio",
+    description: "Unique nautical-themed portfolio inspired by ancient treasure maps and pirate adventures. Features animated compass roses, treasure trails, message-in-a-bottle contact forms, and parchment-styled content with rope borders.",
+    features: ["Animated compass rose", "Treasure trail animations", "Parchment styling", "Message in a bottle", "Golden glint effects", "Rope border decorations"],
+    route: "/nautical",
+    gradient: "from-amber-600 to-blue-600",
+    bgGradient: "from-amber-50 to-blue-50",
+    icon: "⚓"
   }
 ];
 
