@@ -28,27 +28,41 @@ export function ThemeProvider({
     storageKey = "masquerade-ui-theme",
     ...props
 }: ThemeProviderProps) {
-    const [theme, setTheme] = useState<Theme>(
-        () => (localStorage?.getItem(storageKey) as Theme) || defaultTheme
-    );
+    const [theme, setTheme] = useState<Theme>(defaultTheme);
+    const [mounted, setMounted] = useState(false);
 
+    // Load theme from localStorage after mount
     useEffect(() => {
-        const root = window.document.documentElement;
+        setMounted(true);
 
-        root.classList.remove("light", "dark");
-
-        if (theme === "light") {
-            root.classList.add("light");
-        } else {
-            root.classList.add("dark");
+        try {
+            const stored = window.localStorage.getItem(storageKey) as Theme | null;
+            if (stored) {
+                setTheme(stored);
+            }
+        } catch {
+            // ignore for SSR safety
         }
-    }, [theme]);
+    }, [storageKey]);
+
+    // Apply theme to <html>
+    useEffect(() => {
+        if (!mounted) return;
+
+        const root = window.document.documentElement;
+        root.classList.remove("light", "dark");
+        root.classList.add(theme);
+    }, [theme, mounted]);
 
     const value = {
         theme,
-        setTheme: (theme: Theme) => {
-            localStorage?.setItem(storageKey, theme);
-            setTheme(theme);
+        setTheme: (newTheme: Theme) => {
+            try {
+                window.localStorage.setItem(storageKey, newTheme);
+            } catch {
+                // ignore for SSR
+            }
+            setTheme(newTheme);
         },
     };
 
@@ -61,9 +75,8 @@ export function ThemeProvider({
 
 export const useTheme = () => {
     const context = useContext(ThemeProviderContext);
-
-    if (context === undefined)
+    if (context === undefined) {
         throw new Error("useTheme must be used within a ThemeProvider");
-
+    }
     return context;
 };
