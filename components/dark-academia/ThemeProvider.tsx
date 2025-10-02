@@ -34,30 +34,36 @@ export function ThemeProvider({
     useEffect(() => {
         setMounted(true);
         // Only access localStorage after component mounts (client-side)
-        const stored = localStorage?.getItem(storageKey) as Theme;
-        if (stored) {
-            setTheme(stored);
+        if (typeof window !== "undefined") {
+            const stored = window.localStorage.getItem(storageKey) as Theme;
+            if (stored) {
+                setTheme(stored);
+            }
         }
     }, [storageKey]);
 
     useEffect(() => {
         if (!mounted) return;
 
-        const root = window.document.documentElement;
+        if (typeof window !== "undefined") {
+            const root = window.document.documentElement;
 
-        root.classList.remove("light", "dark", "sepia");
+            root.classList.remove("light", "dark", "sepia");
 
-        if (theme === "sepia") {
-            root.classList.add("sepia");
-        } else if (theme === "dark") {
-            root.classList.add("dark");
+            if (theme === "sepia") {
+                root.classList.add("sepia");
+            } else if (theme === "dark") {
+                root.classList.add("dark");
+            }
         }
     }, [theme, mounted]);
 
     const value = {
         theme,
         setTheme: (theme: Theme) => {
-            localStorage?.setItem(storageKey, theme);
+            if (typeof window !== "undefined") {
+                window.localStorage.setItem(storageKey, theme);
+            }
             setTheme(theme);
         },
     };
