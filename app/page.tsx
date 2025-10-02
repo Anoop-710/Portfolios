@@ -114,6 +114,39 @@ const portfolioData = [
     gradient: "from-slate-600 to-gray-600",
     bgGradient: "from-slate-100 to-gray-100",
     icon: "🚀"
+  },
+  {
+    id: 15,
+    title: "Zen Garden",
+    subtitle: "Sakura Blossom Portfolio",
+    description: "Serene Japanese zen garden inspired portfolio with cherry blossoms, koi ponds, and stone lanterns. Features falling sakura petals, swimming koi fish, and tranquil animations for a peaceful browsing experience.",
+    features: ["Sakura petal animations", "Koi pond background", "Stone lantern lighting", "Zen philosophy quotes"],
+    route: "/zen-garden",
+    gradient: "from-pink-500 to-emerald-500",
+    bgGradient: "from-pink-50 to-emerald-50",
+    icon: "🌸"
+  },
+  {
+    id: 16,
+    title: "Dark Academia",
+    subtitle: "Dark Academia Portfolio",
+    description: "Intellectual developer portfolio inspired by Gothic cathedrals and ancient libraries. Features stained glass windows, candlelight effects, parchment cards, and illuminated manuscript styling for a dramatic, scholarly presentation.",
+    features: ["Stained glass animations", "Candle flicker effects", "Parchment-style cards", "Gothic architecture"],
+    route: "/dark-academia",
+    gradient: "from-amber-600 to-orange-600",
+    bgGradient: "from-amber-100 to-orange-100",
+    icon: "🏰"
+  },
+  {
+    id: 17,
+    title: "Neon Synthwave",
+    subtitle: "Futuristic Neon Portfolio",
+    description: "Ultra-modern portfolio with retro-futuristic synthwave aesthetics featuring animated neon grids, holographic panels, and cyberpunk-inspired design elements. Perfect for developers who want to showcase their work with cutting-edge visual effects.",
+    features: ["Animated neon grids", "Holographic panels", "Synthwave sun", "Cyberpunk aesthetics"],
+    route: "/neon",
+    gradient: "from-pink-500 to-cyan-500",
+    bgGradient: "from-pink-50 to-cyan-50",
+    icon: "⚡"
   }
 ];
 
