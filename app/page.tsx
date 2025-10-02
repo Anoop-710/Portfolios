@@ -180,6 +180,17 @@ const portfolioData = [
     gradient: "from-purple-600 to-gold-600",
     bgGradient: "from-purple-50 to-gold-50",
     icon: "🎭"
+  },
+  {
+    id: 21,
+    title: "🐉 Mythic Dragon Realm",
+    subtitle: "Legendary Developer Portfolio",
+    description: "Epic fantasy-themed portfolio inspired by ancient dragon realms, featuring molten lava effects, ember particles, rune-etched cards, and dragon silhouettes. Perfect for developers who want to showcase their work with dramatic flair and legendary storytelling.",
+    features: ["Ember particle animations", "Dragon silhouette parallax", "Rune-etched stone cards", "Lava gradient effects", "Heat shimmer animations", "Forged metal aesthetics"],
+    route: "/mythical-dragon",
+    gradient: "from-orange-600 to-red-600",
+    bgGradient: "from-orange-50 to-red-50",
+    icon: "🐉"
   }
 ];
 
