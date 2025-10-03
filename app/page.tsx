@@ -191,6 +191,28 @@ const portfolioData = [
     gradient: "from-orange-600 to-red-600",
     bgGradient: "from-orange-50 to-red-50",
     icon: "🐉"
+  },
+  {
+    id: 22,
+    title: "🎨 Watercolor Studio",
+    subtitle: "Artistic Developer Portfolio",
+    description: "Elegant watercolor-inspired portfolio featuring soft brush strokes, ink wash effects, and organic animations. Perfect for creative developers who want to showcase their work with artistic flair and fluid design elements.",
+    features: ["Watercolor blot animations", "Ink splatter effects", "Organic transitions", "Brush stroke accents", "Fluid color palettes", "Artistic typography"],
+    route: "/watercolor",
+    gradient: "from-pink-500 to-blue-500",
+    bgGradient: "from-pink-50 to-blue-50",
+    icon: "🎨"
+  },
+  {
+    id: 23,
+    title: "🎮 Retro Arcade",
+    subtitle: "8-Bit Gaming Portfolio",
+    description: "Classic 8-bit retro arcade inspired portfolio with pixel art, CRT scan lines, glowing coin animations, and playful game-like effects. Perfect for developers who love nostalgic gaming aesthetics with modern web technologies.",
+    features: ["Pixel coin animations", "CRT scan lines", "8-bit typography", "Game character cards", "Terminal contact form", "Retro sound effects"],
+    route: "/retro-arcade",
+    gradient: "from-cyan-500 to-magenta-500",
+    bgGradient: "from-cyan-50 to-magenta-50",
+    icon: "🎮"
   }
 ];
 
