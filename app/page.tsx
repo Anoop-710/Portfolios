@@ -224,6 +224,17 @@ const portfolioData = [
     gradient: "from-cyan-500 to-magenta-500",
     bgGradient: "from-cyan-50 to-magenta-50",
     icon: "🎮"
+  },
+  {
+    id: 25,
+    title: "🌋 Volcanic Inferno",
+    subtitle: "Lava-Forged Developer Portfolio",
+    description: "Dramatic volcanic-themed portfolio featuring molten lava cracks, glowing embers, basalt stone textures, and fiery animations. Perfect for developers who want to showcase their work with intense visual impact and molten creativity.",
+    features: ["Lava crack animations", "Ember particle effects", "Basalt stone cards", "Fiery hover transitions", "Ash particle backgrounds", "Glowing typography"],
+    route: "/volcano",
+    gradient: "from-red-600 to-orange-500",
+    bgGradient: "from-red-50 to-orange-50",
+    icon: "🌋"
   }
 ];
 

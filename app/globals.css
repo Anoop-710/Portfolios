@@ -44,6 +44,19 @@
   --nautical-amber-dark: #fbbf24;
   --nautical-blue-light: #3b82f6;
   --nautical-blue-dark: #60a5fa;
+  /* Volcanic theme colors */
+  --volcano-black: #0a0a0a;
+  --volcano-dark: #1a1a1a;
+  --volcano-gray: #2a2a2a;
+  --volcano-light-gray: #3a3a3a;
+  --volcano-ash: #6b7280;
+  --volcano-red: #dc2626;
+  --volcano-orange: #ea580c;
+  --volcano-yellow: #fbbf24;
+  --volcano-bright-orange: #f97316;
+  --volcano-bright-red: #ef4444;
+  --volcano-glow: #ff6b35;
+  --volcano-magma: #7c2d12;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -122,6 +135,95 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+  }
+
+  /* Volcanic theme utilities */
+  .bg-volcano-black {
+    background-color: var(--volcano-black);
+  }
+  .bg-volcano-dark {
+    background-color: var(--volcano-dark);
+  }
+  .bg-volcano-gray {
+    background-color: var(--volcano-gray);
+  }
+  .bg-volcano-light-gray {
+    background-color: var(--volcano-light-gray);
+  }
+  .bg-volcano-ash {
+    background-color: var(--volcano-ash);
+  }
+
+  .text-volcano-white {
+    color: white;
+  }
+  .text-volcano-red {
+    color: var(--volcano-red);
+  }
+  .text-volcano-orange {
+    color: var(--volcano-orange);
+  }
+  .text-volcano-yellow {
+    color: var(--volcano-yellow);
+  }
+  .text-volcano-glow {
+    color: var(--volcano-glow);
+  }
+
+  .border-volcano-red {
+    border-color: var(--volcano-red);
+  }
+  .border-volcano-orange {
+    border-color: var(--volcano-orange);
+  }
+  .border-volcano-glow {
+    border-color: var(--volcano-glow);
+  }
+
+  .bg-gradient-volcano {
+    background: linear-gradient(
+      135deg,
+      var(--volcano-black) 0%,
+      var(--volcano-dark) 50%,
+      var(--volcano-magma) 100%
+    );
+  }
+
+  .bg-gradient-lava {
+    background: linear-gradient(
+      135deg,
+      var(--volcano-red) 0%,
+      var(--volcano-orange) 50%,
+      var(--volcano-yellow) 100%
+    );
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 10px var(--volcano-glow), 0 0 20px var(--volcano-orange),
+      0 0 30px var(--volcano-red);
+  }
+
+  .box-shadow-volcano {
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.3),
+      inset 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .volcano-background-pattern {
+    background-image: radial-gradient(
+        circle at 20% 80%,
+        rgba(234, 88, 12, 0.3) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 20%,
+        rgba(239, 68, 68, 0.3) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 40% 40%,
+        rgba(251, 191, 36, 0.2) 0%,
+        transparent 50%
+      );
   }
 
   html {
