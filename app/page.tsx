@@ -94,6 +94,17 @@ const portfolioData = [
     icon: "⚙️"
   },
   {
+    id: 24,
+    title: "🚂 Industrial Steampunk Railway",
+    subtitle: "Steam-Powered Developer Portfolio",
+    description: "Unique industrial steampunk portfolio featuring brass gears, copper pipes, steam animations, and Victorian-era aesthetics.",
+    features: ["Steam particle effects", "Brass plaque design", "Industrial machinery theme", "Copper pipe accents"],
+    route: "/industrial-steampunk",
+    gradient: "from-amber-700 to-orange-800",
+    bgGradient: "from-amber-100 to-orange-100",
+    icon: "🚂"
+  },
+  {
     id: 7,
     title: "Cosmic Galaxy",
     subtitle: "Stellar Developer Portfolio",
