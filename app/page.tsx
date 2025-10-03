@@ -235,6 +235,17 @@ const portfolioData = [
     gradient: "from-red-600 to-orange-500",
     bgGradient: "from-red-50 to-orange-50",
     icon: "🌋"
+  },
+  {
+    id: 26,
+    title: "⚔️ Norse Saga",
+    subtitle: "Viking Warrior Portfolio",
+    description: "Epic Norse mythology-inspired portfolio featuring rune stones, fjord landscapes, animated ravens, and longship projects. Perfect for developers who want to showcase their work with legendary storytelling and ancient wisdom.",
+    features: ["Rune stone hero", "Animated ravens", "Longship projects", "Fjord backgrounds", "Shield wall skills", "Glowing rune contact"],
+    route: "/norse",
+    gradient: "from-amber-600 to-orange-600",
+    bgGradient: "from-amber-50 to-orange-50",
+    icon: "⚔️"
   }
 ];
 
